@@ -1,0 +1,70 @@
+---
+title: "Ass"
+author: "Aruna"
+date: "10 November 2018"
+output: word_document
+---
+```{r}
+# 1. Test whether two vectors are exactly equal(element by element) 
+vec1= c(rownames(mtcars[1:15,]))
+vec2= c(rownames(mtcars[11:25,]))
+identical(vec1,vec2)
+
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+# 2. Sort the Character vector in asecending order and descending order
+vec1= c(rownames(mtcars[1:15,]))
+vec2= c(rownames(mtcars[11:25,]))
+sort(vec1, na.last = NA, decreasing = FALSE)
+
+```
+```{r}
+# 3. What is the Major difference between str c() and paste(). show an example
+  #The difference is for str_c() the default is no separator, 
+  #so it acts just like paste0() as a default. 
+  #Paste() and paste0() are both functions from the base package, 
+  #whereas str_c() comes from the stringr package.
+library(stringr)
+str_c("I","am","trying","to","learn R") # there is no seperator just like paste0
+str_c("Add"," a"," space"," before"," each letter")
+#create a vector words
+  words = c("I","am","trying","to","learn","R")
+#paste with seperator with _
+paste(words,collapse = "_")
+#paste with seperator with " "
+paste(words, collapse = " ") 
+
+```
+```{r}
+# 4. Introduce a seperator when concatenating the strings
+try= c("Concatenating","string","example")
+#paste with seperator with _
+paste(try,collapse = "_")
+#paste with seperator with " "
+paste(try, collapse = " ") 
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
